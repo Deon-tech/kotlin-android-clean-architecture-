@@ -37,6 +37,8 @@ object Versions {
     const val kotlinxCoroutines = "1.3.2"
     const val hilt = "2.28-alpha"
     const val hiltViewModel = "1.0.0-alpha01"
+    const val jodaTime = "2.10.5"
+
 }
 
 object BuildDependencies {
@@ -100,6 +102,9 @@ object Dependencies {
         const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}"
 
     }
+
+    const val jodaTime = "joda-time:joda-time:${Versions.jodaTime}"
+
 }
 
 object TestDependencies {

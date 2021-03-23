@@ -9,7 +9,7 @@ import prieto.fernando.domain.model.SampleDomainModel
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class SampleRepositoryToDomainModelMapperImplTest(
+class SpaceXRepositoryToDomainModelMapperImplTest(
     private val givenSample: SampleRepositoryModel,
     private val expected: SampleDomainModel
 ) {

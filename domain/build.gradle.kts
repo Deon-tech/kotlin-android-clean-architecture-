@@ -5,4 +5,6 @@ plugins {
 
 dependencies {
     testImplementation(project(ProjectModules.coreAndroidTest))
+
+    implementation(Dependencies.jodaTime)
 }

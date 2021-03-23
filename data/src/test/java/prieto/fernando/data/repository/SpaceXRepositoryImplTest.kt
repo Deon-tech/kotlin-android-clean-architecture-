@@ -20,8 +20,8 @@ import prieto.fernando.data.mapper.SampleRepositoryToDomainModelMapper
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class SampleRepositoryImplTest {
-    private lateinit var cut: SampleRepositoryImpl
+class SpaceXRepositoryImplTest {
+    private lateinit var cut: SpaceXRepositoryImpl
 
     @Mock
     lateinit var sampleRemoteSource: SampleRemoteSource
@@ -39,7 +39,7 @@ class SampleRepositoryImplTest {
     @Before
     fun setUp() {
         cut =
-            SampleRepositoryImpl(sampleRemoteSource, sampleDomainMapper)
+            SpaceXRepositoryImpl(sampleRemoteSource, sampleDomainMapper)
     }
 
     @Test

@@ -8,7 +8,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
@@ -18,18 +17,18 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import prieto.fernando.core_android_test.MainCoroutineRule
-import prieto.fernando.domain.SampleRepository
-import prieto.fernando.domain.model.SampleDomainModel
+import prieto.fernando.domain.SpaceXRepository
+import prieto.fernando.domain.model.CompanyInfoDomainModel
 import kotlin.test.assertEquals
 
 @FlowPreview
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class GetSampleUseCaseImplTest {
+class GetCompanyInfoImplTest {
     private lateinit var cut: GetSampleUseCase
 
     @Mock
-    lateinit var sampleRepository: SampleRepository
+    lateinit var spaceXRepository: SpaceXRepository
 
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
@@ -40,30 +39,38 @@ class GetSampleUseCaseImplTest {
 
     @Before
     fun setUp() {
-        cut = GetSampleUseCaseImpl(sampleRepository)
+        cut = GetCompanyInfoImpl(spaceXRepository)
     }
 
     @Test
-    fun `When execute then returns expected SampleDomainModel`() {
+    fun `When execute then returns expected CompanyInfoDomainModel`() {
         runBlocking {
             // Given
-            val sampleDomainModel = SampleDomainModel(
-                "sample title",
-                1
+            val companyInfoDomainModel = CompanyInfoDomainModel(
+                "name",
+                "founder",
+                "foundedYear",
+                "employees",
+                1,
+                2000
             )
-            val channelSample = ConflatedBroadcastChannel<SampleDomainModel>()
-            channelSample.offer(sampleDomainModel)
-            val expected = SampleDomainModel(
-                "sample title",
-                1
+            val channelCompanyInfo = ConflatedBroadcastChannel<CompanyInfoDomainModel>()
+            channelCompanyInfo.offer(companyInfoDomainModel)
+            val expected = CompanyInfoDomainModel(
+                "name",
+                "founder",
+                "foundedYear",
+                "employees",
+                1,
+                2000
             )
-            whenever(sampleRepository.getSample()).thenReturn(channelSample.asFlow())
+            whenever(spaceXRepository.getCompanyInfo()).thenReturn(channelCompanyInfo.asFlow())
 
             // When
             val actualValue = cut.execute().first()
 
             // Then
-            verify(sampleRepository, times(1)).getSample()
+            verify(spaceXRepository, times(1)).getCompanyInfo()
             assertEquals(expected, actualValue)
         }
     }
