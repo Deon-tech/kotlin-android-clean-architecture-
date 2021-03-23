@@ -39,6 +39,17 @@ object Versions {
     const val hiltViewModel = "1.0.0-alpha01"
     const val jodaTime = "2.10.5"
 
+
+    const val timber = "4.7.1"
+    const val retrofit = "2.6.2"
+    const val retrofitConverterGson = "2.4.0"
+    const val okhttpLoggingInterceptor = "4.2.1"
+    const val picasso = "2.71828"
+    const val bottomSheet = "0.1.9"
+    const val mockWebServer = "4.2.1"
+    const val browser = "1.0.0"
+    const val solidRecyclerView = "1.0.2"
+
 }
 
 object BuildDependencies {
@@ -78,6 +89,10 @@ object Dependencies {
         }
     }
 
+    const val okHttpLoggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLoggingInterceptor}"
+
+
     const val kotlinxCoroutines =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinxCoroutines}"
 
@@ -103,7 +118,13 @@ object Dependencies {
 
     }
 
+
     const val jodaTime = "joda-time:joda-time:${Versions.jodaTime}"
+
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+        const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofitConverterGson}"
+    }
 
 }
 
@@ -150,4 +171,6 @@ object TestDependencies {
         const val mockitoKotlin =
             "com.nhaarman:mockito-kotlin:${Versions.mockitoKotlin}"
     }
+
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}"
 }
