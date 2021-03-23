@@ -8,6 +8,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
@@ -25,7 +26,7 @@ import kotlin.test.assertEquals
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class GetCompanyInfoImplTest {
-    private lateinit var cut: GetSampleUseCase
+    private lateinit var cut: GetCompanyInfoImpl
 
     @Mock
     lateinit var spaceXRepository: SpaceXRepository
