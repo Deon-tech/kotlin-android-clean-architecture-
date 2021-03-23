@@ -10,9 +10,9 @@ import prieto.fernando.core_android_test.MainCoroutineRule
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class SampleRemoteSourceImplTest {
+class SpaceXRemoteSourceImplTest {
 
-    private lateinit var cut: SampleRemoteSourceImpl
+    private lateinit var cut: SpaceXRemoteSourceImpl
 
 
     @JvmField
@@ -21,7 +21,7 @@ class SampleRemoteSourceImplTest {
 
     @Before
     fun setUp() {
-        cut = SampleRemoteSourceImpl()
+        cut = SpaceXRemoteSourceImpl()
     }
 
     // No tests, as there's no logic in the Class Under Test yet

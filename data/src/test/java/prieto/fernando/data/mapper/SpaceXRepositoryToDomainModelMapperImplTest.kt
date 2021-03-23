@@ -49,11 +49,11 @@ class SpaceXRepositoryToDomainModelMapperImplTest(
         }
     }
 
-    private lateinit var cut: SampleRepositoryToDomainModelMapperImpl
+    private lateinit var cut: CompanyInfoRepositoryToDomainModelMapperImpl
 
     @Before
     fun setUp() {
-        cut = SampleRepositoryToDomainModelMapperImpl()
+        cut = CompanyInfoRepositoryToDomainModelMapperImpl()
     }
 
     @Test

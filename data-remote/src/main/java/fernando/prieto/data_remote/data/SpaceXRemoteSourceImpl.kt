@@ -5,13 +5,13 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
-import prieto.fernando.data.SampleRemoteSource
+import prieto.fernando.data.SpaceXRemoteSource
 import prieto.fernando.data.model.SampleRepositoryModel
 import javax.inject.Inject
 
 @FlowPreview
 @ExperimentalCoroutinesApi
-class SampleRemoteSourceImpl @Inject constructor() : SampleRemoteSource {
+class SpaceXRemoteSourceImpl @Inject constructor() : SpaceXRemoteSource {
     private val sampleChannel = ConflatedBroadcastChannel<SampleRepositoryModel>()
 
     override suspend fun getSample(): Flow<SampleRepositoryModel> {

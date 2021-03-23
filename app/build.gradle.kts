@@ -48,6 +48,8 @@ dependencies {
     implementation(Dependencies.AndroidX.Navigation.fragmentKtx)
     implementation(Dependencies.AndroidX.Navigation.uiKtx)
 
+    implementation(Dependencies.jodaTime)
+
     androidTestImplementation(TestDependencies.AndroidX.runner)
     androidTestImplementation(TestDependencies.AndroidX.rules)
     androidTestImplementation(TestDependencies.AndroidX.core)

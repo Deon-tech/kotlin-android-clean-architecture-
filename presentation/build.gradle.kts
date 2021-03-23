@@ -12,4 +12,6 @@ dependencies {
     implementation(Dependencies.AndroidX.lifecycleLivedataKtx)
 
     implementation(Dependencies.Hilt.hiltViewModel)
+
+    implementation(Dependencies.jodaTime)
 }

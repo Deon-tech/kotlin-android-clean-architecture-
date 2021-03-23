@@ -12,4 +12,6 @@ dependencies {
     annotationProcessor(Dependencies.AndroidX.lifecycleCompiler)
     annotationProcessor(Dependencies.AndroidX.archViewModel)
     implementation(Dependencies.AndroidX.archComponents)
+
+    implementation(Dependencies.jodaTime)
 }

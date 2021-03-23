@@ -6,4 +6,6 @@ plugins {
 dependencies {
     implementation(Dependencies.AndroidX.Navigation.fragmentKtx)
     implementation(Dependencies.AndroidX.Navigation.uiKtx)
+
+    implementation(Dependencies.jodaTime)
 }
