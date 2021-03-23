@@ -1,9 +1,7 @@
 package prieto.fernando.data.mapper
 
 import prieto.fernando.data.model.CompanyInfoRepositoryModel
-import prieto.fernando.data.model.SampleRepositoryModel
 import prieto.fernando.domain.model.CompanyInfoDomainModel
-import prieto.fernando.domain.model.SampleDomainModel
 import javax.inject.Inject
 
 class CompanyInfoRepositoryToDomainModelMapperImpl @Inject constructor() :

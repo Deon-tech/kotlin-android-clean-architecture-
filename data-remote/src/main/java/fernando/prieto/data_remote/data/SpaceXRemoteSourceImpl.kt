@@ -6,7 +6,6 @@ import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import prieto.fernando.data.SpaceXRemoteSource
-import prieto.fernando.data.model.SampleRepositoryModel
 import javax.inject.Inject
 
 @FlowPreview

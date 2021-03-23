@@ -17,6 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
 import prieto.fernando.core_android_test.MainCoroutineRule
 import prieto.fernando.data.SpaceXRemoteSource
 import prieto.fernando.data.mapper.CompanyInfoRepositoryToDomainModelMapper
+import prieto.fernando.data.mapper.LaunchesRepositoryToDomainModelMapper
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
@@ -29,6 +30,9 @@ class SpaceXRepositoryImplTest {
     @Mock
     lateinit var companyInfoDomainMapper: CompanyInfoRepositoryToDomainModelMapper
 
+    @Mock
+    lateinit var launchInfoDomainMapper: LaunchesRepositoryToDomainModelMapper
+
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
@@ -39,19 +43,32 @@ class SpaceXRepositoryImplTest {
     @Before
     fun setUp() {
         cut =
-            SpaceXRepositoryImpl(spaceXRemoteSource, companyInfoDomainMapper)
+            SpaceXRepositoryImpl(spaceXRemoteSource, companyInfoDomainMapper, launchInfoDomainMapper)
     }
 
     @Test
-    fun `When getSample then sampleRemoteSource invoked`() {
+    fun `When getCompanyInfo then spaceXRemoteSource invoked`() {
         runBlockingTest {
             // When
-            whenever(spaceXRemoteSource.getSample()).thenReturn(mock())
+            whenever(spaceXRemoteSource.getCompanyInfo()).thenReturn(mock())
 
-            cut.getSample()
+            cut.getCompanyInfo()
 
             // Then
-            verify(spaceXRemoteSource, times(1)).getSample()
+            verify(spaceXRemoteSource, times(1)).getCompanyInfo()
+        }
+    }
+
+    @Test
+    fun `When getAllLaunches then spaceXRemoteSource invoked`() {
+        runBlockingTest {
+            // When
+            whenever(spaceXRemoteSource.getAllLaunches()).thenReturn(mock())
+
+            cut.getAllLaunches()
+
+            // Then
+            verify(spaceXRemoteSource, times(1)).getAllLaunches()
         }
     }
 }
