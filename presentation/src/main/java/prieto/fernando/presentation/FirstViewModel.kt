@@ -96,12 +96,15 @@ class FirstViewModelImpl @Inject constructor(
                     Log.d(TAG, throwable.localizedMessage ?: "")
                     _headerError.postValue(eventOf(Unit))
                     _loadingHeader.value = false
+                    _loadingBody.value = false
                 }
                 .collect { companyDomainModel ->
                     val companyInfoUiModel =
                         companyInfoDomainToUiModelMapper.toUiModel(companyDomainModel)
                     _companyInfo.postValue(companyInfoUiModel)
                     _loadingHeader.value = false
+                    _loadingBody.value = false
+
                 }
         }    }
 
@@ -113,12 +116,16 @@ class FirstViewModelImpl @Inject constructor(
                     Log.d(TAG, throwable.localizedMessage ?: "")
                     _headerError.postValue(eventOf(Unit))
                     _loadingHeader.value = false
+                    _loadingBody.value = false
+
                 }
                 .collect { launchesDomainModel ->
                     val launchUiModel =
                         launchInfoDomainToUiModelMapper.toUiModel(launchesDomainModel)
                     _launches.postValue(launchUiModel)
                     _loadingHeader.value = false
+                    _loadingBody.value = false
+
                 }
         }    }
 
