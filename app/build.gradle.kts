@@ -48,6 +48,12 @@ dependencies {
     implementation(Dependencies.AndroidX.Navigation.fragmentKtx)
     implementation(Dependencies.AndroidX.Navigation.uiKtx)
 
+    implementation(Dependencies.picasso)
+    implementation(Dependencies.bottomSheet)
+    implementation(Dependencies.AndroidX.browser)
+    implementation(Dependencies.solidRecyclerView)
+
+
     implementation(Dependencies.jodaTime)
 
     androidTestImplementation(TestDependencies.AndroidX.runner)

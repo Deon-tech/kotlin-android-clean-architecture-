@@ -40,6 +40,7 @@ object Versions {
     const val jodaTime = "2.10.5"
 
 
+
     const val timber = "4.7.1"
     const val retrofit = "2.6.2"
     const val retrofitConverterGson = "2.4.0"
@@ -63,6 +64,15 @@ object BuildDependencies {
 
 object Dependencies {
 
+    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
+
+    const val bottomSheet =
+        "com.qhutch.bottomsheetlayout:bottomsheetlayout:${Versions.bottomSheet}"
+
+    const val solidRecyclerView = "com.mitteloupe.solid:solidrecyclerview:${Versions.solidRecyclerView}"
+
+
+
     object AndroidX {
         const val fragmentKtx =
             "androidx.fragment:fragment-ktx:${Versions.appCompat}"
@@ -80,6 +90,9 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycleLivedataKtx}"
         const val archComponents =
             "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleLivedataKtx}"
+        const val browser = "androidx.browser:browser:${Versions.browser}"
+
+
 
         object Navigation {
             const val fragmentKtx =
@@ -87,6 +100,8 @@ object Dependencies {
             const val uiKtx =
                 "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
         }
+
+
     }
 
     const val okHttpLoggingInterceptor =
